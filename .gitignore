@@ -1,0 +1,69 @@
+# =========================
+# Python / Django
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static_root/
+*.mo
+
+# If you collectstatic to a specific folder
+/static/
+!/static/src/   # allow your custom source static files
+
+# =========================
+# Virtual Environment
+# =========================
+.env
+.venv
+env/
+venv/
+ENV/
+
+# =========================
+# Tailwind + Flowbite (Node.js stuff)
+# =========================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Tailwind build artifacts
+*.css.map
+*.js.map
+.postcss-cache/
+public/build/
+build/
+
+# =========================
+# Editor / OS
+# =========================
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# Local settings
+# =========================
+*.local.py
+settings_local.py
