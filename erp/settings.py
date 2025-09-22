@@ -128,7 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #-----------------New-Flowbite-Settings-----------------
 
 # Compressor settings
-COMPRESS_ROOT = BASE_DIR / 'static'
+COMPRESS_ROOT = BASE_DIR / 'erp' / 'static'
 
 COMPRESS_ENABLED = True
 
