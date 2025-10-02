@@ -12,86 +12,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django + Tailwind CSS + Flowbite</title>
 
+    <!-- ================== Tailwind CSS ================== -->
     {% compress css %}
     <link rel="stylesheet" href="{% static 'src/output.css' %}">
     {% endcompress %}
 
+    <!-- ================== Google Fonts ================== -->
+    <!-- Example: uncomment & add fonts if needed -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> -->
 </head>
 
 <body class="bg-green-50">
 
-    <!-- Add this -->
-    
+  <!-- ================== NAVBAR ================== -->
+  <div class="navbar bg-base-100 shadow-sm w-full">
 
+    <!-- ========== LEFT SIDE: Menu + Logo ========== -->
+    <div class="flex-1 flex items-center gap-4">
 
-
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="{% static 'logos/logo.png' %}" class="h-8" alt="ERP Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ERP</span>
-  </a>
-  <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-        <span class="sr-only">Open user menu</span>
-        <img class="w-8 h-8 rounded-full" src="{% static 'logos/user.png' %}" alt="user photo">
-      </button>
-      <!-- Dropdown menu -->
-      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-        <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@erp.com</span>
+      <!-- Hamburger Menu (dropdown) -->
+      <div class="dropdown">
+        <!-- Button -->
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <!-- Hamburger Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
         </div>
-        <ul class="py-2" aria-labelledby="user-menu-button">
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-          </li>
-          <li>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-          </li>
+        <!-- Dropdown menu items -->
+        <ul tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+          <li><a>Attendance</a></li>
+          <li><a>Fees Payment</a></li>
+          <li><a>Marks/Exams</a></li>
+          <li><a>Schedule</a></li>
+          <li><a>Subject Resources</a></li>
+          <li><a>Assignments</a></li>
+          <li><a>chat</a></li>
+          <li><a>Library</a></li>
+          <li><a>Notices</a></li>
         </ul>
       </div>
-      <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div>
-  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-      <li>
-        <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Admission</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Student management</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Fee management</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
 
+      <!-- Logo -->
+      <img class="h-8 w-auto" src="{% static 'logos/logo.png' %}" alt="Logo">
 
-    <!-- End of new HTML -->
-
-    <div class="container mx-auto mt-4">
-        {% block content %}
-        {% endblock content %}
+      <!-- Brand Name -->
+      <a class="font-sans text-xl" href="{% url 'index' %}">ERP</a>
     </div>
+    <!-- /LEFT SIDE -->
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- ========== RIGHT SIDE: Notification + Profile ========== -->
+    <div class="flex-none flex items-center gap-2 ml-auto">
+
+      <!-- ================== NOTIFICATION DROPDOWN ================== -->
+      <div class="dropdown dropdown-end">
+        <!-- Button with bell & badge -->
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle indicator">
+
+          <!-- Badge (shows count) -->
+          <!-- Place BEFORE the SVG so it attaches correctly to the top-right corner -->
+          <span class="indicator-item badge badge-xs badge-primary">2</span>
+
+          <!-- Bell Icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               class="h-5 w-5" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 
+                     0 0118 14.158V11a6.002 6.002 
+                     0 00-4-5.659V5a2 2 0 
+                     10-4 0v.341C7.67 6.165 6 
+                     8.388 6 11v3.159c0 .538-.214 
+                     1.055-.595 1.436L4 17h5m6 
+                     0v1a3 3 0 11-6 0v-1m6 
+                     0H9" />
+          </svg>
+        </div>
+
+        <!-- Dropdown (notification list) -->
+        <!-- Appears when bell is clicked -->
+        <ul tabindex="0" 
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+          <li>
+            <a class="justify-between">
+              New Message 
+              <span class="badge badge-sm">1</span>
+            </a>
+          </li>
+          <li><a>Fees payment before 20th, Dec 2025</a></li>
+          <li><a>New Assignment!</a></li>
+        </ul>
+      </div>
+      <!-- ================== /NOTIFICATION DROPDOWN ================== -->
+
+      <!-- ================== PROFILE DROPDOWN ================== -->
+      <div class="dropdown dropdown-end">
+        <!-- Profile button (avatar image) -->
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" 
+                 alt="Avatar" />
+          </div>
+        </div>
+
+        <!-- Profile dropdown menu -->
+        <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+          <li>
+            <a class="justify-between">
+              Profile 
+              <span class="badge">New</span>
+            </a>
+          </li>
+          <li><a>Settings</a></li>
+          <li><a>Logout</a></li>
+        </ul>
+      </div>
+      <!-- ================== /PROFILE DROPDOWN ================== -->
+
+    </div>
+    <!-- /RIGHT SIDE -->
+
+  </div>
+  <!-- ================== /NAVBAR ================== -->
+
+  <!-- ================== MAIN CONTENT ================== -->
+  <div class="container mx-auto mt-4">
+      {% block content %}
+      {% endblock content %}
+  </div>
+  <!-- ================== /MAIN CONTENT ================== -->
+
+  <!-- ================== FLOWBITE JS (optional, if needed) ================== -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
+
 </body>
-
 </html>

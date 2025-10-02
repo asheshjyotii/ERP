@@ -7,6 +7,8 @@
     "watch:css": "tailwindcss -i ./erp/static/src/input.css -o ./erp/static/src/output.css --watch"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "daisyui": "^5.1.25",
     "flowbite": "^3.1.2"
   }
 }
